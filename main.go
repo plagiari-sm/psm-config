@@ -60,7 +60,7 @@ func init() {
 }
 func main() {
 	var path string
-	flag.StringVar(&path, "config", "conf/dev.yaml", "Parse Configuration File")
+	flag.StringVar(&path, "config", "conf/default.yaml", "Parse Configuration File")
 	flag.Parse()
 
 	data, err := ioutil.ReadFile(path)
