@@ -1,0 +1,14 @@
+project_name: psm-config
+builds:
+    - main: main.go
+      binary: psm-config
+      goos:
+        - windows
+        - darwin
+        - linux
+      goarch:
+        - amd64
+archive:
+    format: tar.gz
+release:
+    draft: false
