@@ -11,9 +11,10 @@ import (
 
 // Config Global Variable
 // Store Configuration Options
-var Config *conf
+var Config *Conf
 
-type conf struct {
+// Conf Struct
+type Conf struct {
 	Name  string `yaml:"name,omitempty"`
 	Env   string `yaml:"env,omitempty"`
 	Host  string `yaml:"host,omitempty"`
@@ -45,9 +46,9 @@ type conf struct {
 		AccessToken       string `yaml:"access-token,omitempty"`
 		AccessTokenSecret string `yaml:"access-token-secret,omitempty"`
 	} `yaml:"twitter,omitempty"`
-	Log   struct{} `yaml:"log,omitempty"`
-	Proto struct{} `yaml:"proto,omitempty"`
-	API   struct{} `yaml:"api,omitempty"`
+	Log   struct{}          `yaml:"log,omitempty"`
+	Proto struct{}          `yaml:"proto,omitempty"`
+	API   map[string]string `yaml:"api,omitempty"`
 }
 
 // NewConfig Init
