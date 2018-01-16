@@ -3,8 +3,7 @@ package psmconfig
 import (
 	"flag"
 	"io/ioutil"
-
-	log "github.com/sirupsen/logrus"
+	"log"
 
 	yaml "gopkg.in/yaml.v2"
 )
@@ -26,6 +25,13 @@ type Conf struct {
 		Pass string `yaml:"pass,omitempty"`
 		Path string `yaml:"path,omitempty"`
 	} `yaml:"mongo,omitempty"`
+	CouchBase struct {
+		Host string `yaml:"host,omitempty"`
+		Port int    `yaml:"port,omitempty"`
+		User string `yaml:"user,omitempty"`
+		Pass string `yaml:"pass,omitempty"`
+		Path string `yaml:"path,omitempty"`
+	} `yaml:"couchbase,omitempty"`
 	ES struct {
 		Host string `yaml:"host,omitempty"`
 		Port int    `yaml:"port,omitempty"`
@@ -59,9 +65,10 @@ func NewConfig() {
 
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
-		log.Fatalf("[PSM-CONFIG] Configuration parsing error: %v", err)
+		log.Printf("[PSM-CONFIG] Configuration parsing error: %v", err)
+		panic(err)
 	}
 
 	yaml.Unmarshal(data, &Config)
-	log.Infof("[PSM-CONFIG] Configuration loaded: %v", Config)
+	log.Printf("[PSM-CONFIG] Configuration loaded: %v", Config)
 }

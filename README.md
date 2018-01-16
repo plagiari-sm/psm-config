@@ -1,6 +1,6 @@
-###### psm-config
+##### psm-config
 
-[psm-config](https://github.com/plagiari-sm/psm-config) is a centralized configuration package written in [Go](https://golang.org/) to store information for every service in the [Plagiarism Ecosystem](https://github.com/plagiari-sm).
+[psm-config](https://github.com/plagiari-sm/psm-config) is a centralized configuration package written in [Go](https://golang.org/) to store information for every service in [Plagiarism](https://github.com/plagiari-sm)'s Ecosystem.
 
 #### How to use
 ```go
@@ -27,23 +27,20 @@ func main() {
 ```
 #### Configuration file example
 ```yaml
-# dev.yaml
+# devevelopment.yaml
 name: svc-listen
 env: development
 host: 0.0.0.0
 port: 8000
-db:
-    mongo:
-        host: 0.0.0.0
-        port: 27017
-        path: streams
-    redis:
-        host: 0.0.0.0
-        port: 6379
-        path: streams
-log:
-    level: DEBUG
-    output: stdout
-api:
-    api-feeds: https://0.0.0.0:8080/
+mongo:
+    port: 27017
+    host: 0.0.0.0
+    user: username
+    pass: password
+    path: collection
+twitter:
+    consumer-key: $TWITTER_CONSUMER_KEY
+    consumer-secret: $TWITTER_CONSUMER_SECRET
+    access-token: $TWITTER_ACCESS_TOKEN
+    access-token-secret: $TWITTER_ACCESS_TOKEN_SECRET
 ```
