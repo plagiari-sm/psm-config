@@ -14,11 +14,12 @@ var Config *Conf
 
 // Conf Struct
 type Conf struct {
-	Name  string `yaml:"name,omitempty"`
-	Env   string `yaml:"env,omitempty"`
-	Host  string `yaml:"host,omitempty"`
-	Port  int    `yaml:"port,omitempty"`
-	Mongo struct {
+	Name   string `yaml:"name,omitempty"`
+	Env    string `yaml:"env,omitempty"`
+	Host   string `yaml:"host,omitempty"`
+	Port   int    `yaml:"port,omitempty"`
+	Static string `yaml:"static,omitempty"`
+	Mongo  struct {
 		Host string `yaml:"host,omitempty"`
 		Port int    `yaml:"port,omitempty"`
 		User string `yaml:"user,omitempty"`

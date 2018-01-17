@@ -1,4 +1,4 @@
-##### psm-config
+###### psm-config
 
 [psm-config](https://github.com/plagiari-sm/psm-config) is a centralized configuration package written in [Go](https://golang.org/) to store information for every service in [Plagiarism](https://github.com/plagiari-sm)'s Ecosystem.
 
